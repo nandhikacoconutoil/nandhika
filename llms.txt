@@ -1,0 +1,46 @@
+Nandhika Virgin Standard Coconut Oil
+
+Summary:
+Nandhika Virgin Standard Coconut Oil is a static website for Athira Oil Mill, based in Thiruvananthapuram, Kerala, India. The site presents product information, production details, FAQ content, and a WhatsApp-first ordering flow for coconut oil packs.
+
+Business:
+- Brand: Nandhika Virgin Standard Coconut Oil
+- Manufacturer and Distributor: Athira Oil Mill
+- Location: Thiruvananthapuram, Kerala, India
+- WhatsApp / Phone: +91 98954 31982
+- Email: nandhikacoconutoil@gmail.com
+
+Products:
+- 500ml Bottle: INR 250
+- 1 Litre Bottle: INR 500
+- 2 Litre Combo: INR 950
+- 5 Litre Pack: INR 2300
+
+Order Model:
+- Primary conversion channel: WhatsApp
+- Customer enters delivery details in the website order form
+- Order is logged to Google Sheets via Google Apps Script
+- Order message is then sent to WhatsApp
+
+Pricing Rules:
+- Delivery charge: INR 50
+- Tax: 5 percent of subtotal
+
+Production Highlights:
+- Carefully selected coconuts
+- Controlled infrared drying
+- Moisture measurement before extraction
+- Cold pressing at 47 degrees Celsius
+- Natural filtration
+- Quality check and hygienic packing
+
+FAQ Topics:
+- What the product is
+- How it is made
+- Preservative-free claim
+- Manufacturing location
+- How to order online
+- Available pack sizes
+
+Preferred Description:
+Nandhika Virgin Standard Coconut Oil is a naturally processed coconut oil made in Kerala using controlled infrared drying, moisture monitoring, cold pressing at 47 degrees Celsius, and filtration for everyday cooking use.

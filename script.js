@@ -1,9 +1,13 @@
 /* Nandhika Virgin Coconut Oil — vanilla JS */
 
 const WHATSAPP_NUMBER = "919895431982";
-const GOOGLE_SHEET_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxKR8YnIyv5xYjnJtw84KcAjjgDQOsGG09NIsRQC1_1AJZ_C3479xa8vcGqj99grpooPA/exec";
+const GOOGLE_SHEET_WEB_APP_URL =
+  "https://script.google.com/macros/s/AKfycbxKR8YnIyv5xYjnJtw84KcAjjgDQOsGG09NIsRQC1_1AJZ_C3479xa8vcGqj99grpooPA/exec";
 const PHONE_DISPLAY = "+91 98954 31982";
-const FSSAI = "21325139000497";
+const DELIVERY_LABEL = "Standard Delivery";
+const DELIVERY_CHARGE = 50;
+const TAX_LABEL = "Tax";
+const TAX_RATE = 0.05;
 const ADDRESS_LINES = [
   "Athira Oil Mill, Panavila Chenkal,",
   "Vattavila P O, Neyyattinkara,",
@@ -17,10 +21,34 @@ const SOCIALS = {
 };
 
 const PRODUCTS = [
-  { id: "500ml", name: "Nandhika Cold Pressed", size: "500 ML Bottle", price: 250, image: "assets/bottle-500ml.png" },
-  { id: "1l", name: "Nandhika Cold Pressed", size: "1000 ML Bottle", price: 450, image: "assets/bottle-1l.png" },
-  { id: "2l", name: "Nandhika Combo Pack", size: "2 x 1000 ML Bottles", price: 850, image: "assets/combo-2l.png", badge: "Best Seller" },
-  { id: "5l", name: "Nandhika Family Can", size: "5 Litre Jerry Can", price: 1800, image: "assets/can-5l.png" },
+  {
+    id: "500ml",
+    name: "Nandhika Virgin Standard Coconut Oil",
+    size: "500ml Bottle",
+    price: 250,
+    image: "assets/bottle-500ml.png",
+  },
+  {
+    id: "1l",
+    name: "Nandhika Virgin Standard Coconut Oil",
+    size: "1 Litre Bottle",
+    price: 500,
+    image: "assets/bottle-1l.png",
+  },
+  {
+    id: "2l",
+    name: "Nandhika Virgin Standard Coconut Oil",
+    size: "2 Litre Combo",
+    price: 950,
+    image: "assets/combo-2l.png",
+  },
+  {
+    id: "5l",
+    name: "Nandhika Virgin Standard Coconut Oil",
+    size: "5 Litre Pack",
+    price: 2300,
+    image: "assets/can-5l.png",
+  },
 ];
 
 const NAV = [
@@ -29,78 +57,249 @@ const NAV = [
   ["Our Process", "#process"],
   ["Products", "#products"],
   ["Why Nandhika", "#why"],
+  ["FAQ", "#faq"],
   ["Contact Us", "#contact"],
 ];
 
 const FEATURES = [
-  ["droplet", "100% Virgin"],
-  ["snowflake", "Cold Pressed"],
-  ["flask-conical", "No Chemicals"],
-  ["leaf", "Preservative Free"],
-  ["heart-handshake", "Rich in Lauric Acid"],
+  ["droplet", "100% Virgin Standard"],
+  ["thermometer", "Cold Pressed at 47°C"],
+  ["shield", "No Added Preservatives"],
+  ["sun", "Advanced Infrared Drying"],
+  ["leaf", "Naturally Pure"],
 ];
 
 const TRUST = [
-  ["heart-handshake", "Thousands of", "Happy Families"],
-  ["sparkles", "Made with Premium", "Coconuts"],
-  ["factory", "Hygienic &", "Modern Process"],
-  ["award", "FSSAI", "Certified"],
-  ["recycle", "Eco Friendly", "Packaging"],
+  ["check-check", "Carefully Selected", "Coconuts"],
+  ["cpu", "Advanced", "Processing"],
+  ["gauge", "Controlled", "Moisture"],
+  ["thermometer", "Cold Pressed", "at 47°C"],
+  ["package-check", "Hygienically", "Packed"],
 ];
 
-const PROCESS = [
-  ["01", "Premium Coconuts", "Handpicked for quality"],
-  ["02", "Infra Red Dryer", "Dries without losing nutrients"],
-  ["03", "Moisture Check", "Ensures perfect dryness"],
-  ["04", "Cold Pressed at 47°C", "Retains natural goodness"],
-  ["05", "Nutrient Retention", "Keeps goodness, nothing removed"],
-  ["06", "Virgin Standard", "Our promise of purity"],
+const COOKING_POINTS = [
+  ["Naturally Processed", "Carefully produced from selected coconuts."],
+  ["Cold Pressed", "Extracted using controlled low-temperature pressing."],
+  ["Naturally Filtered", "Filtered for clean and consistent oil."],
+  ["Made in Kerala", "Manufactured in Thiruvananthapuram, Kerala."],
 ];
 
 const REASONS = [
-  ["100% Pure & Natural", "No additives or fillers"],
-  ["Rich in Lauric Acid", "Boosts immunity"],
-  ["Cold Pressed at 47°C", "To retain nutrients"],
-  ["Goodness of Coconut", "Natural & wholesome"],
-  ["No Added Chemicals", "Totally safe for your family"],
-  ["Made with Love & Care", "For a healthier you"],
+  [
+    "Advanced Infrared Drying",
+    "Selected coconuts are dried using controlled infrared technology designed to remove moisture while retaining their natural characteristics.",
+  ],
+  [
+    "Cold Pressed at 47°C",
+    "Our controlled cold-pressing process keeps temperatures at approximately 47°C during extraction.",
+  ],
+  [
+    "Precise Moisture Control",
+    "Moisture levels are carefully monitored before extraction to help maintain consistency and quality.",
+  ],
+  [
+    "No Added Preservatives",
+    "Carefully processed coconut oil without unnecessary additives or preservatives.",
+  ],
+  [
+    "Single-Take Extraction",
+    "A controlled extraction process helps minimise repeated heating and unnecessary processing.",
+  ],
+  [
+    "Quality at Every Stage",
+    "From raw coconut selection to final packing, each stage follows a carefully managed production process.",
+  ],
+];
+
+const PROCESS = [
+  ["01", "Coconut Selection", "Carefully selected quality coconuts."],
+  ["02", "Copra Preparation", "Coconuts are prepared under controlled conditions."],
+  ["03", "Infrared Drying", "Advanced infrared drying helps remove excess moisture."],
+  ["04", "Moisture Check", "Moisture levels are measured before extraction."],
+  ["05", "Cold Pressing at 47°C", "Controlled extraction helps retain the oil's natural characteristics."],
+  ["06", "Natural Filtration", "The extracted coconut oil is filtered for clarity and purity."],
+  ["07", "Quality Check & Packing", "The finished oil is checked and hygienically packed."],
+];
+
+const TECHNOLOGY = [
+  [
+    "Infrared Drying",
+    "Our stainless-steel infrared drying system removes excess moisture from prepared coconut while avoiding unnecessary over-roasting.",
+  ],
+  [
+    "Scientific Moisture Control",
+    "Moisture levels are checked before pressing to ensure the copra reaches the required condition for consistent oil extraction.",
+  ],
+  [
+    "Controlled Cold Pressing",
+    "Oil is extracted at approximately 47°C using a controlled cold-pressing process designed to minimise excessive heat exposure.",
+  ],
+];
+
+const DRYING_POINTS = [
+  ["Infrared Drying", "Helps remove excess moisture under controlled conditions."],
+  ["Moisture Measurement", "Moisture is checked before the coconut moves to extraction."],
+  ["Controlled Preparation", "The process aims for consistent drying without unnecessary hardening."],
+  ["Natural Aroma", "Controlled drying helps avoid excessive roasting and preserves the coconut's characteristic aroma."],
 ];
 
 const REVIEWS = [
-  ["The purity and taste of Nandhika coconut oil is excellent. Highly recommended!", "Anitha R.", "Trivandrum"],
-  ["We started using Nandhika for our entire family. It's pure, natural and very good for health.", "Suresh B.", "Kollam"],
-  ["You can really feel the difference in quality. Truly a trusted brand.", "Meena L.", "Pathanamthitta"],
+  [
+    "The aroma feels fresh and natural, and we liked using it for everyday cooking at home. Ordering on WhatsApp was simple and the packaging arrived neat.",
+    "Anjali S.",
+    "Neyyattinkara, Thiruvananthapuram",
+  ],
+  [
+    "We tried the 1 litre bottle first and the quality felt clean and consistent. It works well for regular kitchen use and the overall experience was smooth.",
+    "Rahul P.",
+    "Pattom, Thiruvananthapuram",
+  ],
+  [
+    "The coconut fragrance is pleasant and the oil feels carefully processed. The order update through WhatsApp was quick and easy to follow.",
+    "Meera K.",
+    "Kowdiar, Thiruvananthapuram",
+  ],
+];
+
+const FAQS = [
+  [
+    "What is Nandhika Virgin Standard Coconut Oil?",
+    "Nandhika Virgin Standard Coconut Oil is naturally processed coconut oil made from carefully selected coconuts using controlled infrared drying, moisture monitoring, cold pressing and filtration.",
+  ],
+  [
+    "How is Nandhika coconut oil made?",
+    "The coconuts undergo controlled preparation and infrared drying. Moisture is checked before the prepared copra is cold pressed at approximately 47°C. The extracted oil is then filtered, quality checked and packed.",
+  ],
+  [
+    "Does Nandhika coconut oil contain preservatives?",
+    "Nandhika coconut oil is produced without added preservatives.",
+  ],
+  [
+    "Where is Nandhika coconut oil manufactured?",
+    "Nandhika Virgin Standard Coconut Oil is manufactured by Athira Oil Mill in Thiruvananthapuram, Kerala, India.",
+  ],
+  [
+    "How can I order Nandhika coconut oil online?",
+    "Select the required pack size and quantity on the website, enter the delivery details and click Send Order on WhatsApp. The selected products and order information are then sent directly to Nandhika through WhatsApp.",
+  ],
+  [
+    "What pack sizes are available?",
+    "Nandhika coconut oil is currently available in 500ml, 1 litre, 2 litre combo and 5 litre options.",
+  ],
 ];
 
 const formatINR = (n) => `₹${n.toLocaleString("en-IN")}`;
+const roundMoney = (n) => Math.round(n * 100) / 100;
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const icons = () => window.lucide && window.lucide.createIcons();
 
-const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-  "Hi Nandhika, I'd like to order virgin coconut oil.",
-)}`;
-
-/* ---------- state ---------- */
 const cart = {};
 const draft = Object.fromEntries(PRODUCTS.map((p) => [p.id, 1]));
+const modal = $("#orderModal");
+const successModal = $("#successModal");
+const baseWaLink = `https://wa.me/${WHATSAPP_NUMBER}`;
+const waLink = `${baseWaLink}?text=${encodeURIComponent("Hello Nandhika,\n\nI would like to place an order.")}`;
+const SITE_URL = window.location.origin + window.location.pathname;
 
-/* ---------- static content ---------- */
+function buildStructuredData() {
+  const organization = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Athira Oil Mill",
+    brand: {
+      "@type": "Brand",
+      name: "Nandhika Virgin Standard Coconut Oil",
+    },
+    url: SITE_URL,
+    email: "nandhikacoconutoil@gmail.com",
+    telephone: PHONE_DISPLAY,
+    logo: `${window.location.origin}/assets/logo.png`,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Athira Oil Mill, Panavila Chenkal, Vattavila P O",
+      addressLocality: "Neyyattinkara",
+      addressRegion: "Kerala",
+      postalCode: "695132",
+      addressCountry: "IN",
+    },
+  };
+
+  const website = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Nandhika Virgin Standard Coconut Oil",
+    url: SITE_URL,
+    inLanguage: "en-IN",
+    about: "Cold pressed coconut oil made in Thiruvananthapuram, Kerala",
+  };
+
+  const faq = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: FAQS.map(([question, answer]) => ({
+      "@type": "Question",
+      name: question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: answer,
+      },
+    })),
+  };
+
+  const products = PRODUCTS.map((product) => ({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: `${product.name} ${product.size}`,
+    image: [`${window.location.origin}/${product.image}`],
+    description:
+      "Naturally processed coconut oil made in Kerala using controlled infrared drying and cold pressing at 47°C.",
+    brand: {
+      "@type": "Brand",
+      name: "Nandhika",
+    },
+    sku: product.id,
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "INR",
+      price: product.price,
+      availability: "https://schema.org/InStock",
+      url: SITE_URL,
+      seller: {
+        "@type": "Organization",
+        name: "Athira Oil Mill",
+      },
+    },
+  }));
+
+  return [organization, website, faq, ...products];
+}
+
+function renderStructuredData() {
+  const node = $("#seoSchema");
+  if (!node) return;
+  node.textContent = JSON.stringify(buildStructuredData());
+}
+
 function renderStatic() {
   $("#navDesktop").innerHTML = NAV.map(([l, h]) => `<a href="${h}">${l}</a>`).join("");
   $("#navMobile").innerHTML =
     NAV.map(([l, h]) => `<a href="${h}">${l}</a>`).join("") +
-    `<button class="btn btn-primary btn-pill" data-open-order style="margin-top:.25rem">Order Now</button>`;
+    `<button class="btn btn-primary btn-pill" data-open-order style="margin-top:.25rem">Order on WhatsApp</button>`;
 
   $("#featureList").innerHTML = FEATURES.map(
-    ([ic, label]) =>
-      `<li><span class="ic"><i data-lucide="${ic}"></i></span><span class="tx">${label}</span></li>`,
+    ([ic, label]) => `<li><span class="ic"><i data-lucide="${ic}"></i></span><span class="tx">${label}</span></li>`,
   ).join("");
 
   $("#trustList").innerHTML = TRUST.map(
     ([ic, t, s]) =>
       `<li><span class="ic"><i data-lucide="${ic}"></i></span><span><b>${t}</b><small>${s}</small></span></li>`,
+  ).join("");
+
+  $("#cookingPoints").innerHTML = COOKING_POINTS.map(
+    ([t, s]) =>
+      `<li><span class="ic"><i data-lucide="check"></i></span><span><b>${t}</b><small>${s}</small></span></li>`,
   ).join("");
 
   $("#reasonList").innerHTML = REASONS.map(
@@ -113,22 +312,49 @@ function renderStatic() {
       `<li><span class="ic"><i data-lucide="package"></i></span><p class="num">${n}</p><p class="t">${t}</p><p class="s">${s}</p></li>`,
   ).join("");
 
+  $("#technologyList").innerHTML = TECHNOLOGY.map(
+    ([t, s]) => `
+      <article class="feature-card">
+        <span class="feature-icon"><i data-lucide="settings-2"></i></span>
+        <h3>${t}</h3>
+        <p>${s}</p>
+      </article>`,
+  ).join("");
+
+  $("#dryingList").innerHTML = DRYING_POINTS.map(
+    ([t, s]) =>
+      `<li><span class="ic"><i data-lucide="sun"></i></span><span><b>${t}</b><small>${s}</small></span></li>`,
+  ).join("");
+
   $("#reviewList").innerHTML = REVIEWS.map(
-    ([text, name, place]) => `
+    ([text, name, place], index) => `
       <figure class="review">
-        <blockquote>“${text}”</blockquote>
+        <div class="review-top">
+          <span class="quote-mark">“</span>
+          <span class="stars" aria-label="5 star review">${'<i data-lucide="star"></i>'.repeat(5)}</span>
+        </div>
+        <blockquote>“${esc(text)}”</blockquote>
         <figcaption>
-          <span class="av">${name.charAt(0)}</span>
-          <span><b>${name}</b><small>${place}</small></span>
-          <span class="stars">${'<i data-lucide="star"></i>'.repeat(5)}</span>
+          <span class="av">${index + 1}</span>
+          <span><b>${esc(name)}</b><small>${esc(place)}</small></span>
         </figcaption>
       </figure>`,
+  ).join("");
+
+  $("#faqList").innerHTML = FAQS.map(
+    ([q, a], i) => `
+      <details class="faq-item"${i === 0 ? " open" : ""}>
+        <summary>
+          <span>${q}</span>
+          <i data-lucide="chevron-down"></i>
+        </summary>
+        <div class="faq-answer"><p>${a}</p></div>
+      </details>`,
   ).join("");
 
   $("#productGrid").innerHTML = PRODUCTS.map(
     (p) => `
       <article class="product">
-        ${p.badge ? `<span class="badge">${p.badge}</span>` : ""}
         <img src="${p.image}" alt="${esc(p.name)} ${esc(p.size)}" width="800" height="800" loading="lazy" />
         <h3>${p.name}</h3>
         <p class="size">${p.size}</p>
@@ -139,16 +365,15 @@ function renderStatic() {
             <span class="val">1</span>
             <button type="button" aria-label="Increase quantity" data-step="1"><i data-lucide="plus"></i></button>
           </div>
-          <button class="add-btn" data-add="${p.id}" aria-label="Add ${esc(p.name)} to order">
+          <button class="add-btn" data-add="${p.id}" aria-label="Add ${esc(p.name)} ${esc(p.size)} to order">
             <i data-lucide="shopping-cart"></i>
           </button>
         </div>
       </article>`,
   ).join("");
 
-  $("#footerProducts").innerHTML = PRODUCTS.map(
-    (p) => `<li><a href="#products">${p.name} — ${p.size}</a></li>`,
-  ).join("");
+  $("#footerQuickLinks").innerHTML = NAV.map(([label, href]) => `<li><a href="${href}">${label}</a></li>`).join("");
+  $("#footerProducts").innerHTML = PRODUCTS.map((p) => `<li><a href="#products">${p.size}</a></li>`).join("");
 
   $("#socialList").innerHTML = [
     [SOCIALS.instagram, "instagram", "Instagram"],
@@ -163,15 +388,18 @@ function renderStatic() {
     .join("");
 
   $("#footerAddress").innerHTML = ADDRESS_LINES.map((l) => `<span>${l}</span>`).join("");
-  $("[data-phone]").textContent = PHONE_DISPLAY;
-  $("[data-fssai]").textContent = FSSAI;
-  $("#mapsLink").href = SOCIALS.maps;
+  $$("[data-phone]").forEach((el) => {
+    el.textContent = PHONE_DISPLAY;
+  });
   $("#year").textContent = new Date().getFullYear();
   $$("[data-wa-link]").forEach((a) => (a.href = waLink));
+  const qr = $("#qrCode");
+  qr.src = `https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(baseWaLink)}`;
+  qr.alt = `QR code to start WhatsApp order with ${PHONE_DISPLAY}`;
+  renderStructuredData();
   icons();
 }
 
-/* ---------- cart ---------- */
 function cartCount() {
   return Object.values(cart).reduce((a, b) => a + b, 0);
 }
@@ -190,6 +418,9 @@ function renderCart() {
     total: cart[p.id] * p.price,
   }));
   const subtotal = lines.reduce((s, l) => s + l.total, 0);
+  const delivery = DELIVERY_CHARGE;
+  const tax = roundMoney(subtotal * TAX_RATE);
+  const total = subtotal + delivery + tax;
   const area = $("#cartArea");
 
   if (!lines.length) {
@@ -203,9 +434,9 @@ function renderCart() {
             (l) => `
           <div class="cart-row">
             <span class="cart-item">
-              <img src="${l.image}" alt="${esc(l.name)}" width="40" height="40" loading="lazy" />
+              <img src="${l.image}" alt="${esc(l.name)} ${esc(l.size)}" width="40" height="40" loading="lazy" />
               <span style="min-width:0">
-                <b>${l.name}</b><small>${l.size}</small>
+                <b>${l.name}</b><small>${l.size} • ${formatINR(l.price)}</small>
               </span>
             </span>
             <span class="stepper" data-cart-stepper="${l.id}">
@@ -214,7 +445,7 @@ function renderCart() {
               <button type="button" aria-label="Increase quantity" data-cart-step="1"><i data-lucide="plus"></i></button>
             </span>
             <span class="lt">${formatINR(l.total)}</span>
-            <button type="button" class="rm" data-remove="${l.id}" aria-label="Remove ${esc(l.name)}">
+            <button type="button" class="rm" data-remove="${l.id}" aria-label="Remove ${esc(l.name)} ${esc(l.size)}">
               <i data-lucide="trash-2"></i>
             </button>
           </div>`,
@@ -222,28 +453,26 @@ function renderCart() {
           .join("")}
         <dl class="totals">
           <div><dt>Subtotal</dt><dd>${formatINR(subtotal)}</dd></div>
-          <div><dt>Delivery</dt><dd class="free">Free</dd></div>
-          <div class="grand"><dt>Total</dt><dd>${formatINR(subtotal)}</dd></div>
+          <div><dt>Delivery</dt><dd class="free">${DELIVERY_LABEL} • ${formatINR(delivery)}</dd></div>
+          <div><dt>${TAX_LABEL} (5%)</dt><dd>${formatINR(tax)}</dd></div>
+          <div class="grand"><dt>Total</dt><dd>${formatINR(total)}</dd></div>
         </dl>
       </div>`;
   }
   renderBadge();
   icons();
-  return { lines, subtotal };
+  return { lines, subtotal, delivery, tax, total };
 }
-
-/* ---------- modal ---------- */
-const modal = $("#orderModal");
-const successModal = $("#successModal");
 
 function openModal() {
   renderCart();
   modal.hidden = false;
   document.body.style.overflow = "hidden";
 }
+
 function closeModal() {
   modal.hidden = true;
-  document.body.style.overflow = "";
+  document.body.style.overflow = successModal.hidden ? "" : "hidden";
 }
 
 function resetOrderForm() {
@@ -264,10 +493,10 @@ function showSuccessModal() {
 function closeSuccessModal() {
   successModal.hidden = true;
   successModal.classList.remove("is-animated");
-  document.body.style.overflow = "";
+  document.body.style.overflow = modal.hidden ? "" : "hidden";
 }
 
-function buildOrderPayload(formData, lines, total) {
+function buildOrderPayload(formData, lines, subtotal, delivery, tax, total) {
   const createdAt = new Date().toISOString();
   return {
     orderId: `NDK-${Date.now()}`,
@@ -286,14 +515,20 @@ function buildOrderPayload(formData, lines, total) {
       qty,
       total: itemTotal,
     })),
+    subtotal,
+    deliveryLabel: DELIVERY_LABEL,
+    delivery,
+    taxLabel: TAX_LABEL,
+    taxRate: TAX_RATE,
+    tax,
     total,
     status: "New",
-    source: "Website",
+    source: "Website / WhatsApp",
   };
 }
 
 async function persistOrder(order) {
-  if (!GOOGLE_SHEET_WEB_APP_URL) return;
+  if (!GOOGLE_SHEET_WEB_APP_URL) return false;
 
   try {
     await fetch(GOOGLE_SHEET_WEB_APP_URL, {
@@ -301,12 +536,41 @@ async function persistOrder(order) {
       mode: "no-cors",
       body: JSON.stringify(order),
     });
+    return true;
   } catch (error) {
     console.error("Order logging failed", error);
+    return false;
   }
 }
 
-/* ---------- events ---------- */
+function buildWhatsAppMessage(order) {
+  return [
+    "Hello Nandhika,",
+    "",
+    "I would like to place an order.",
+    "",
+    "ORDER",
+    ...order.items.map((item) => `${item.size} × ${item.qty} — ${formatINR(item.total)}`),
+    "",
+    `Subtotal: ${formatINR(order.subtotal)}`,
+    `Delivery: ${DELIVERY_LABEL} (${formatINR(order.delivery)})`,
+    `${TAX_LABEL} (5%): ${formatINR(order.tax)}`,
+    `Total: ${formatINR(order.total)}`,
+    "",
+    "CUSTOMER",
+    `Name: ${order.customerName}`,
+    `Phone: ${order.phone}`,
+    `Address: ${order.address}`,
+    `City / District: ${order.city}`,
+    `Pincode: ${order.pincode}`,
+    order.note ? `Note: ${order.note}` : "",
+    "",
+    "Please confirm my order.",
+  ]
+    .filter(Boolean)
+    .join("\n");
+}
+
 document.addEventListener("click", (e) => {
   const t = e.target;
 
@@ -376,57 +640,35 @@ $("#orderForm").addEventListener("submit", async (e) => {
     err.hidden = false;
   };
 
-  const lines = PRODUCTS.filter((p) => (cart[p.id] ?? 0) > 0).map((p) => ({
-    ...p,
-    qty: cart[p.id],
-    total: cart[p.id] * p.price,
-  }));
-  const subtotal = lines.reduce((s, l) => s + l.total, 0);
+  const { lines, subtotal, delivery, tax, total } = renderCart();
 
   if (!lines.length) return fail("Please add at least one product.");
   if (!f.name.trim()) return fail("Please enter your full name.");
   if (!/^[0-9+\s-]{10,15}$/.test(f.phone.trim())) return fail("Please enter a valid WhatsApp number.");
-  if (!f.address.trim() || !f.city.trim() || !f.pincode.trim())
-    return fail("Please complete your delivery address.");
+  if (!f.address.trim() || !f.city.trim() || !f.pincode.trim()) return fail("Please complete your delivery address.");
   err.hidden = true;
 
-  const order = buildOrderPayload(f, lines, subtotal);
+  const order = buildOrderPayload(f, lines, subtotal, delivery, tax, total);
+  const whatsappWindow = window.open("", "_blank");
 
-  const message = [
-    "*New Order — Nandhika Virgin Coconut Oil*",
-    "",
-    ...lines.map((l) => `• ${l.name} (${l.size}) × ${l.qty} — ${formatINR(l.total)}`),
-    "",
-    `Subtotal: ${formatINR(subtotal)}`,
-    "Delivery: Free",
-    `*Total: ${formatINR(subtotal)}*`,
-    "",
-    `Name: ${f.name}`,
-    `Phone: ${f.phone}`,
-    `Address: ${f.address}, ${f.city} — ${f.pincode}`,
-    f.note ? `Note: ${f.note}` : "",
-  ]
-    .filter(Boolean)
-    .join("\n");
+  if (!whatsappWindow) {
+    return fail("WhatsApp could not be opened. Please allow popups and try again.");
+  }
 
   submitBtn.disabled = true;
   const originalLabel = submitBtn.textContent;
-  submitBtn.textContent = "Opening WhatsApp...";
+  submitBtn.textContent = "Preparing Order...";
 
-  const whatsappWindow = window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank");
+  await persistOrder(order);
 
-  if (!whatsappWindow) {
-    submitBtn.disabled = false;
-    submitBtn.textContent = originalLabel;
-    return fail("WhatsApp could not be opened. Please allow popups and try again.");
-  }
+  const message = buildWhatsAppMessage(order);
+  whatsappWindow.location.href = `${baseWaLink}?text=${encodeURIComponent(message)}`;
 
   closeModal();
   resetOrderForm();
   showSuccessModal();
   submitBtn.disabled = false;
   submitBtn.textContent = originalLabel;
-  await persistOrder(order);
 });
 
 renderStatic();
