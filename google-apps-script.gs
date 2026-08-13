@@ -1,6 +1,6 @@
 const SHEET_NAME = "Orders";
-const EMAIL_RECIPIENT = "nandhikaofficial@gmail.com";
-const EMAIL_SUBJECT_PREFIX = "New Nandhika Order";
+const EMAIL_RECIPIENT = "nandhikacoconutoil@gmail.com";
+const EMAIL_SUBJECT_PREFIX = "[New Order!]";
 
 function doPost(e) {
   try {

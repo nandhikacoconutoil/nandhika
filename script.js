@@ -1,7 +1,7 @@
 /* Nandhika Virgin Coconut Oil — vanilla JS */
 
 const WHATSAPP_NUMBER = "919895431982";
-const GOOGLE_SHEET_WEB_APP_URL = "";
+const GOOGLE_SHEET_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxKR8YnIyv5xYjnJtw84KcAjjgDQOsGG09NIsRQC1_1AJZ_C3479xa8vcGqj99grpooPA/exec";
 const PHONE_DISPLAY = "+91 98954 31982";
 const FSSAI = "21325139000497";
 const ADDRESS_LINES = [
