@@ -201,7 +201,7 @@ const modal = $("#orderModal");
 const successModal = $("#successModal");
 const baseWaLink = `https://wa.me/${WHATSAPP_NUMBER}`;
 const waLink = `${baseWaLink}?text=${encodeURIComponent("Hello Nandhika,\n\nI would like to place an order.")}`;
-const SITE_URL = window.location.origin + window.location.pathname;
+const SITE_URL = "https://www.nandhikacoconutoil.in/";
 
 function buildStructuredData() {
   const organization = {
@@ -215,7 +215,7 @@ function buildStructuredData() {
     url: SITE_URL,
     email: "nandhikacoconutoil@gmail.com",
     telephone: PHONE_DISPLAY,
-    logo: `${window.location.origin}/assets/logo.png`,
+    logo: "https://www.nandhikacoconutoil.in/assets/logo.png",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Athira Oil Mill, Panavila Chenkal, Vattavila P O",
@@ -252,7 +252,7 @@ function buildStructuredData() {
     "@context": "https://schema.org",
     "@type": "Product",
     name: `${product.name} ${product.size}`,
-    image: [`${window.location.origin}/${product.image}`],
+    image: [`https://www.nandhikacoconutoil.in/${product.image}`],
     description:
       "Naturally processed coconut oil made in Kerala using controlled infrared drying and cold pressing at 47°C.",
     brand: {
