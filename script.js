@@ -216,6 +216,7 @@ function buildStructuredData() {
     email: "nandhikacoconutoil@gmail.com",
     telephone: PHONE_DISPLAY,
     logo: "https://www.nandhikacoconutoil.in/assets/logo.png",
+    areaServed: ["Neyyattinkara", "Thiruvananthapuram", "Trivandrum", "Kerala"],
     address: {
       "@type": "PostalAddress",
       streetAddress: "Athira Oil Mill, Panavila Chenkal, Vattavila P O",
@@ -230,9 +231,12 @@ function buildStructuredData() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Nandhika Virgin Standard Coconut Oil",
+    alternateName: "Nandhika Coconut Oil",
     url: SITE_URL,
     inLanguage: "en-IN",
-    about: "Cold pressed coconut oil made in Thiruvananthapuram, Kerala",
+    keywords:
+      "Nandhika, coconut oil, cold pressed coconut oil, virgin coconut oil Kerala, coconut oil Neyyattinkara, coconut oil Thiruvananthapuram, coconut oil Trivandrum",
+    about: "Cold pressed coconut oil made in Neyyattinkara, Thiruvananthapuram, Kerala",
   };
 
   const faq = {
@@ -254,12 +258,13 @@ function buildStructuredData() {
     name: `${product.name} ${product.size}`,
     image: [`https://www.nandhikacoconutoil.in/${product.image}`],
     description:
-      "Naturally processed coconut oil made in Kerala using controlled infrared drying and cold pressing at 47°C.",
+      "Naturally processed coconut oil made in Neyyattinkara, Thiruvananthapuram, Kerala using controlled infrared drying and cold pressing at 47°C.",
     brand: {
       "@type": "Brand",
       name: "Nandhika",
     },
     sku: product.id,
+    areaServed: ["Neyyattinkara", "Thiruvananthapuram", "Trivandrum", "Kerala"],
     offers: {
       "@type": "Offer",
       priceCurrency: "INR",
